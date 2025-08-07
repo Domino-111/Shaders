@@ -1,8 +1,9 @@
-Shader "Unlit/MyFirstShader"
+Shader "Unlit/HealthBar"
 {
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
+        _Health ("Health", Range(0, 1)) = 1
     }
     SubShader
     {
@@ -31,6 +32,7 @@ Shader "Unlit/MyFirstShader"
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
+            float _Health;
 
             v2f vert (appdata v)
             {
@@ -42,9 +44,13 @@ Shader "Unlit/MyFirstShader"
 
             fixed4 frag (v2f i) : SV_Target
             {
-                // sample the texture
-                fixed4 col = tex2D(_MainTex, i.uv);
-                return col;
+                float healthbarMask = _Health > i.uv.x;
+                                                    //Clamp01 = saturate    
+                float3 barColor = float3(0, 0.6, 0) * saturate(0.2 + i.uv.x);
+                float3 bgColor = (0.1).xxx * (1 - i.uv.x);
+                float3 outColor = lerp(bgColor, barColor, healthbarMask);
+                
+                return float4 (outColor, 1);
             }
             ENDCG
         }
