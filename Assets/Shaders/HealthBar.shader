@@ -32,7 +32,7 @@ Shader "Unlit/HealthBar"
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
-            float _Health = sin(_Time.y * 1) * 0.5 + 0.5;
+            float _Health; //= sin(_Time.y * 1) * 0.5 + 0.5;
 
             v2f vert (appdata v)
             {
