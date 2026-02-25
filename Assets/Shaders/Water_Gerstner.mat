@@ -36,10 +36,10 @@ Material:
     - _Steepness: 0.1
     - _Wavelength: 15
     m_Colors:
-    - _Color: {r: 0, g: 0.8111138, b: 1, a: 0.47058824}
+    - _Color: {r: 0, g: 0.8111138, b: 1, a: 0.45490196}
     - _Direction: {r: 1, g: 0.35, b: 0, a: 0}
-    - _WaveA: {r: 1, g: 0, b: 0.1, a: 5}
-    - _WaveB: {r: 1, g: 0.5, b: 0.1, a: 10}
-    - _WaveC: {r: 1, g: 0.5, b: 0.1, a: 5}
+    - _WaveA: {r: 1, g: 0, b: 0.25, a: 5}
+    - _WaveB: {r: 1, g: 0.5, b: 0.25, a: 10}
+    - _WaveC: {r: 1, g: 0.5, b: 0.25, a: 5}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
